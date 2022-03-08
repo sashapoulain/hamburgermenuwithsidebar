@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>ADMIN PANEL</title>
+</head>
+
+<body>
+    <div class="sidebar-active" id="wrap">
+        <div class="sidebar">
+            Sidebar
+        </div>
+        <div class="header">
+            <div class="menu-link-wrapper">
+                <div class="menu-link menu-trigger-open">
+                    <!-- menu-trigger-open classa ham.menu için eklendi -->
+                    <span class="lines"></span>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            Content
+        </div>
+    </div>
+    <script src="jqueryv3.6.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <script>
+        (function() {
+
+            // On icon click... for hamburgermenu js 
+            $('.menu-link-wrapper').on('click.mobileNav', function() {
+                $('.sidebar').animate({
+                            width: 'toggle'
+                        },
+                        0)
+                    // Toggle the open/closed state of the menu icon
+                $('.menu-link-wrapper .menu-link').toggleClass('menu-trigger-open');
+                let sidebarstatus = $('#wrap').hasClass('sidebar-active');
+                if (sidebarstatus === true) {
+                    $('#wrap').removeClass('sidebar-active');
+                } else {
+                    $('#wrap').addClass('sidebar-active');
+                }
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
